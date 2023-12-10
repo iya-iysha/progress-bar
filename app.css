@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'Tw Cen MT';
+  src:
+    url("./fonts/Tw\ Cen\ MT\ Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 15px 10px;
+  color: #000;
+  font-family: 'Tw Cen MT', Arial, sans-serif;
+  font-size: 18px;
+}
+
+.title {
+  align-self: start;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  padding: 65px 0 0;
+  gap: 76px 0;
+}
+
+@media (min-width: 540px) {
+  .progress-bar {
+    flex-direction: row;
+    padding: 45px 0 0;
+    align-self: center;
+    justify-content: start;
+    gap: 0 25%;
+    width: 65%;
+  }
+}
+
+.progress-bar__ring {
+  transform: rotate(-90deg);
+  box-shadow: 0 0 0 10px #EEF3F6 inset;
+  border-radius: 50%;
+  visibility: visible;
+}
+
+.progress-bar__ring_hidden {
+  visibility: hidden;
+}
+
+.progress-bar__circle {
+  transform-origin: center;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.progress-bar__circle_animated {
+  animation: progress-animation 5s linear infinite;
+}
+
+.progress-bar__control {
+  justify-content: start;
+  width: 50%;
+}
+
+@media (min-width: 540px) {
+  .progress-bar__control {
+    width: min-content;
+  }
+}
+
+.progress-bar__inputs-list {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px 0;
+}
+
+.progress-bar__input {
+  display: flex;
+  gap: 0 20px;  
+  align-items: center;
+}
+
+.progress-bar__label {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 28px;
+  background-color: transparent;
+  border-radius: 40px;
+}
+
+.progress-bar__checkbox {
+  align-self: start;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(10px 0 0 0);
+  background-color: transparent;
+  border: none;
+}
+
+.progress-bar__slider {
+  position: absolute;
+  border-radius: 40px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #EEF3F6;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.progress-bar__slider:before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  left: 5%;
+  bottom: 5%;
+  background-color: #FFF;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.progress-bar__checkbox:checked + .progress-bar__slider {
+  background-color: #005EFE;
+}
+
+.progress-bar__checkbox:focus + .progress-bar__slider {
+  box-shadow: 0 0 1px transparent;
+}
+
+.progress-bar__checkbox:checked + .progress-bar__slider:before {
+  background-color: #FFFFFF;
+  transform: translateX(17px);
+}
+
+.progress-bar__input-name {
+  margin: 0;
+  padding: 0;
+}
+
+.progress-bar__percent-input {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 44px;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+.progress-bar__percent-input:focus {
+  border: 1px solid #005EFE;
+  outline: transparent;
+}
+
+@keyframes progress-animation {
+  0% { transform: none; }
+  100% { transform: rotate(360deg); }
+}

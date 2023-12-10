@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+    <link rel="stylesheet" href="./app.css">
+  </head>
+  <body>
+    <div class="page">
+      <h1 class="title">Progress</h1>
+      <section class="progress-bar">
+        <svg class="progress-bar__ring" width="120" height="120">
+          <circle class="progress-bar__circle" stroke="#005EFE" stroke-width="10" cx="60" cy="60" r="55" fill="transparent" />
+        </svg>
+        <div class="progress-bar__control">
+          <ul class="progress-bar__inputs-list">
+            <li class="progress-bar__input">
+                <input type="number" class="progress-bar__percent-input" >
+                <span class="progress-bar__input-name">Value</span>
+            </li>
+            <li class="progress-bar__input">
+              <label class="progress-bar__label">
+                <input type="checkbox" class="progress-bar__checkbox progress-bar__animate-input" >
+                <span class="progress-bar__slider"></span>
+              </label>
+              <p class="progress-bar__input-name" >Animate</p>
+            </li>
+            <li class="progress-bar__input">
+              <label class="progress-bar__label">
+                <input type="checkbox" class="progress-bar__checkbox progress-bar__visibility-input" >
+                <span class="progress-bar__slider"></span>
+              </label>
+              <p class="progress-bar__input-name" >Hide</p>
+            </li>
+          </ul> 
+        </div>
+      </section>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
