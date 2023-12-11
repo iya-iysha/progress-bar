@@ -20,25 +20,31 @@
   margin: 0;
   padding: 0;
   font-size: 18px;
+  min-height: 15vh;
+}
+
+@media (min-width: 540px) {
+  .title {
+    min-height: 20vh;
+  }
 }
 
 .progress-bar {
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
-  padding: 65px 0 0;
+  height: 75vh;
   gap: 76px 0;
 }
 
 @media (min-width: 540px) {
   .progress-bar {
     flex-direction: row;
-    padding: 45px 0 0;
     align-self: center;
     justify-content: start;
     gap: 0 25%;
-    width: 65%;
+    width: 61vw;
+    height: 45vh;
   }
 }
 
@@ -90,6 +96,7 @@
   display: flex;
   gap: 0 20px;  
   align-items: center;
+  position: relative;
 }
 
 .progress-bar__label {
@@ -99,6 +106,19 @@
   height: 28px;
   background-color: transparent;
   border-radius: 40px;
+}
+
+.progress-bar__percent-error {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  color: #005EFE;
+  font-size: 10px;
+  visibility: hidden;
+}
+
+.progress-bar__percent-error_visible {
+  visibility: visible;
 }
 
 .progress-bar__checkbox {

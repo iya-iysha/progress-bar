@@ -1,10 +1,21 @@
-import { circumference, progressCircle } from './constants.js';
+import { 
+  regexPercent, 
+  circumference, 
+  progressCircle, 
+  percentError, 
+  classPercentErrorVisible 
+} from './constants.js';
 
-const checkPercentValue = (percent) => {
-  if (percent > 100) {
-    percent = 100;
-  } else if (percent < 0) {
+const checkPercentValue = (percent) => {  
+  if (percent.match(regexPercent)) {
+    percentError.classList.remove(classPercentErrorVisible);
+    if (percent > 100) {
+      percent = 100;
+    }
+    return percent
+  } else {
     percent = 0;
+    percentError.classList.add(classPercentErrorVisible);
   }
   return percent
 };
