@@ -110,7 +110,7 @@
 
 .progress-bar__percent-error {
   position: absolute;
-  top: 28px;
+  bottom: -10px;
   left: 0;
   color: #005EFE;
   font-size: 10px;
