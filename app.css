@@ -43,6 +43,8 @@
 }
 
 .progress-bar__ring {
+  width: 120px;
+  height: 120px;
   transform: rotate(-90deg);
   box-shadow: 0 0 0 10px #EEF3F6 inset;
   border-radius: 50%;
@@ -54,6 +56,9 @@
 }
 
 .progress-bar__circle {
+  stroke: #005EFE;
+  stroke-width: 10;
+  fill: transparent;
   transform-origin: center;
   transition: stroke-dashoffset 0.3s;
 }
@@ -117,15 +122,16 @@
   background-color: #EEF3F6;
   -webkit-transition: .4s;
   transition: .4s;
+  cursor: pointer;
 }
 
 .progress-bar__slider:before {
   content: "";
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 24px;
+  width: 24px;
   left: 5%;
-  bottom: 5%;
+  bottom: 7%;
   background-color: #FFF;
   transition: .3s;
   border-radius: 50%;
@@ -141,7 +147,7 @@
 
 .progress-bar__checkbox:checked + .progress-bar__slider:before {
   background-color: #FFFFFF;
-  transform: translateX(17px);
+  transform: translateX(18px);
 }
 
 .progress-bar__input-name {
