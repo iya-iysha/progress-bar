@@ -20,7 +20,7 @@ let storage = {
 progressCircle.style.strokeDashoffset = circumference;
 progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
 
-inputPercent.addEventListener('change', () => {
+inputPercent.addEventListener('input', () => {
   storage.percent = apiControl.getPercent();
   setProgress(checkPercentValue(storage.percent));
 });

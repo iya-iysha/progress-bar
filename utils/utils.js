@@ -7,7 +7,7 @@ import {
 } from './constants.js';
 
 const checkPercentValue = (percent) => {  
-  if (percent.match(regexPercent)) {
+  if (percent.match(regexPercent) && percent >= 0) {
     percentError.classList.remove(classPercentErrorVisible);
     if (percent > 100) {
       percent = 100;

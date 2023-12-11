@@ -8,7 +8,7 @@ const classPercentErrorVisible = 'progress-bar__percent-error_visible';
 const classAnimateInput = 'progress-bar__animate-input';
 const classVisibilityInput = 'progress-bar__visibility-input';
 
-const regexPercent = /\d+(\.,\d+)?/g;
+const regexPercent = /[0-9]/g;
 
 const progressRing = document.querySelector(`.${classRing}`);
 const progressCircle = document.querySelector(`.${classCircle}`);
